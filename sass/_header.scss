@@ -1,0 +1,10 @@
+.header {
+  background-color: black;
+
+  &__cart {
+    margin: 10px 0;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+  }
+}
