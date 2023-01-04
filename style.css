@@ -88,6 +88,20 @@
   display: block;
 }
 
+.cond-exp-3__form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.cond-exp-3__form label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.cond-exp-3__form .form__error {
+  color: red;
+}
+
 body {
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;

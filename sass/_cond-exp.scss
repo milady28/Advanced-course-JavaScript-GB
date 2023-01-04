@@ -1,0 +1,15 @@
+.cond-exp-3__form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .form__error {
+    color: red;
+  }
+}
