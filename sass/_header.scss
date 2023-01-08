@@ -31,4 +31,28 @@
       display: block;
     }
   }
+
+  &__search {
+    position: relative;
+
+    .search-field {
+        box-sizing: border-box;
+        width: 200px;
+        color: #fafafa;
+        padding: 10px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid #fafafa;
+      }
+
+      .btn-search {
+        background-color: transparent;
+        border: none;
+        color: #fafafa;
+        font-size: 1.2em;
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+      }
+  }
 }
