@@ -96,7 +96,17 @@
 .cond-exp-3__form label {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 10px;
+}
+.cond-exp-3__form input {
+  outline: none;
+}
+.cond-exp-3__form .valid {
+  border-color: green;
+}
+.cond-exp-3__form .invalid {
+  border-color: red;
 }
 .cond-exp-3__form .form__error {
   color: red;

@@ -6,7 +6,20 @@
   label {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 10px;
+  }
+
+  input {
+    outline: none;
+  }
+
+  .valid {
+    border-color: green;
+  }
+
+  .invalid {
+    border-color: red;
   }
 
   .form__error {
