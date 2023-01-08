@@ -6,50 +6,57 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header__wrap center">
-            <p class="header__logo">E-SHOP</p>
-            <button class="header__cart btn-cart" type="button"><img src="images/cart-icon.svg" alt="Корзина"></button>
-        </div>
-        <div class="header__basket basket">
-            <table class="basket__table">
-                <caption>Товары в корзине</caption>
-                <tr>
-                    <th>Наименование товара</th>
-                    <th>Цена, руб.</th>
-                    <th>Количество, шт.</th>
-                    <th>Общая стоимость</th>
-                </tr>
-            </table>
-            <div class="basket__total-сount">
-                <span>Количество товаров в корзине:</span>
+    <div id="app">
+        <header class="header">
+            <div class="header__wrap center">
+                <p class="header__logo">E-SHOP</p>
+                <form action="#" class="header__search search-form" @submit.prevent="filter">
+                    <input type="text" class="search-field" v-model="userSearch">
+                    <button class="btn-search" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <button class="header__cart btn-cart" type="button"><img src="images/cart-icon.svg" alt="Корзина"></button>
             </div>
-            <div class="basket__total-sum">
-                <span>Итоговая стоимость товаров в корзине:</span>
+            <div class="header__basket basket">
+                <table class="basket__table">
+                    <caption>Товары в корзине</caption>
+                    <tr>
+                        <th>Наименование товара</th>
+                        <th>Цена, руб.</th>
+                        <th>Количество, шт.</th>
+                        <th>Общая стоимость</th>
+                    </tr>
+                </table>
+                <div class="basket__total-сount">
+                    <span>Количество товаров в корзине:</span>
+                </div>
+                <div class="basket__total-sum">
+                    <span>Итоговая стоимость товаров в корзине:</span>
+                </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div class="products center"></div>
-        <div class="conditional-expression">
-            One: 'Hi Mary.' Two: 'Oh, hi.'
-            One: 'How are you doing?'
-            Two: 'I'm doing alright. How about you?'
-            One: 'Not too bad. The weather is great isn't it?'
-            Two: 'Yes. It's absolutely beautiful today.'
-            One: 'I wish it was like this more frequently.'
-            Two: 'Me too.'
-            One: 'So where are you going now?'
-            Two: 'I'm going to meet a friend of mine at the department store.'
-            One: 'Going to do a little shopping?'
-            Two: 'Yeah, I have to buy some presents for my parents.'
-            One: 'What's the occasion?'
-            Two: 'It's their anniversary.'
-            One: 'That's great. Well, you better get going. You don't want to be late.'
-            Two: 'I'll see you next time.'
-            One: 'Sure. Bye.'
-        </div>
-    </main>
+        </header>
+        <main>
+            <!-- <div class="products center"></div> -->
+
+            <div class="products">
+                <div class="products__item" v-for="product of filtered" :key="product.id_product">
+                    <div class="products__img-wrap">
+                        <img class="products__img"  :src="imgCatalog" alt="Some img">
+                    </div>
+                    <div class="desc">
+                        <h3>{{product.product_name}}</h3>
+                        <p>{{product.price}} $</p>
+                        <button class="products__buy-btn buy-btn" @click="addProduct(product)">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+        integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
